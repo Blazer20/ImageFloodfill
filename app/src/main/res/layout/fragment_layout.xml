@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MyFragment">
+
+    <Spinner
+        android:id="@+id/algorithm_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:entries="@array/list_of_algorithms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.example.smartstaffsolutiontask.ui.ViewForBitmap
+        android:id="@+id/bitmap_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/algorithm_picker"
+        app:layout_constraintBottom_toTopOf="@id/generate"/>
+
+    <EditText
+        android:id="@+id/bitmap_width"
+        style="@style/Theme.SmartStaffSolutionTask.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="3"
+        android:inputType="number"
+        android:maxLength="3"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="@id/speed"
+        app:layout_constraintEnd_toStartOf="@+id/bitmap_size_divider"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/bitmap_size_divider"
+        style="@style/Theme.SmartStaffSolutionTask.Text.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bitmap_width"
+        app:layout_constraintEnd_toStartOf="@+id/bitmap_height"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bitmap_width" />
+
+
+    <EditText
+        android:id="@+id/bitmap_height"
+        style="@style/Theme.SmartStaffSolutionTask.Text.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="3"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bitmap_width"
+        app:layout_constraintEnd_toStartOf="@+id/generate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bitmap_size_divider" />
+
+    <Button
+        android:id="@+id/generate"
+        style="@style/Theme.SmartStaffSolutionTask.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/generate"
+        android:textAllCaps="false"
+        android:textSize="15sp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bitmap_height"
+        app:layout_constraintTop_toTopOf="@id/bitmap_height"
+        app:layout_constraintBottom_toBottomOf="@id/bitmap_width"/>
+
+    <SeekBar
+        android:id="@+id/speed_chooser"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="1000"
+        android:min="1"
+        android:progress="500"
+        app:layout_constraintBottom_toBottomOf="@+id/fps_text"
+        app:layout_constraintEnd_toStartOf="@+id/fps_text"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/speed"
+        app:layout_constraintTop_toTopOf="@+id/fps_text" />
+
+    <TextView
+        android:id="@+id/speed"
+        style="@style/Theme.SmartStaffSolutionTask.Text.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/speed"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fps_text"
+        app:layout_constraintEnd_toStartOf="@+id/speed_chooser"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/fps_text"
+        style="@style/Theme.SmartStaffSolutionTask.Text.Primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/speed_chooser"
+        tools:text="30 fps" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SmartStaffSolutionTask</string>
+
+    <string name="size">Size</string>
+    <string name="generate">Generate</string>
+    <string name="speed">Speed</string>>
+
+    <string-array name="list_of_algorithms">
+        <item>Algorithm #1 (Queue)</item>
+        <item>Algorithm #2 (Stack)</item>
+        <item>Algorithm #3 (Scanline)</item>
+    </string-array>
+</resources>
